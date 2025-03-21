@@ -1,5 +1,5 @@
 # Platform School Example Project
-
+Hello
 This example is based on the [Spring PetClinic Sample Application](https://github.com/irori-ab/platform-school-petclinic/).
 
 Follow the instructions in the [platform-school-labs](https://github.com/irori-ab/platform-school-labs)-project for details.
