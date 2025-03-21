@@ -19,8 +19,6 @@ metadata:
   labels:
     app: petclinic
 spec:
-  imagePullSecrets:
-    - name: ghcr-login-secret
   replicas: 3
   selector:
     matchLabels:
@@ -30,6 +28,8 @@ spec:
       labels:
         app: petclinic
     spec:
+      imagePullSecrets:
+        - name: ghcr-login-secret
       containers:
         - name: workload
           image: ghcr.io/joakim1601/platform-school-petclinic-granstrom:latest
