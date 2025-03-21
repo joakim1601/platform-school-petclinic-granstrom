@@ -21,10 +21,6 @@ metadata:
 spec:
   imagePullSecrets:
     - name: ghcr-login-secret
-  containers:
-    - name: workload
-      image: docker pull ghcr.io/joakim1601/platform-school-petclinic-granstrom:latest
-      imagePullPolicy: Always
   replicas: 3
   selector:
     matchLabels:
@@ -36,7 +32,8 @@ spec:
     spec:
       containers:
         - name: workload
-          image: dsyer/petclinic
+          image: docker pull ghcr.io/joakim1601/platform-school-petclinic-granstrom:latest
+          imagePullPolicy: Always
           env:
             - name: SPRING_PROFILES_ACTIVE
               value: postgres
