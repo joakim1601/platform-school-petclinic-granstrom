@@ -19,7 +19,13 @@ metadata:
   labels:
     app: petclinic
 spec:
-  replicas: 1
+  imagePullSecrets:
+    - name: ghcr-login-secret
+  containers:
+    - name: workload
+      image: docker pull ghcr.io/joakim1601/platform-school-petclinic-granstrom:latest
+      imagePullPolicy: Always
+  replicas: 3
   selector:
     matchLabels:
       app: petclinic
