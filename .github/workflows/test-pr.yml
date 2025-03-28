@@ -4,7 +4,6 @@ on: pull_request
 
 jobs:
   test:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -14,8 +13,14 @@ jobs:
         uses: actions/setup-java@v4
         with:
           java-version: 17
-          distribution: 'adopt'
+          distribution: "adopt"
           cache: maven
 
       - name: Run unit tests
         run: ./mvnw test -DskipTests=false
+
+      - name: Secret Scanning
+        uses: trufflesecurity/trufflehog@main
+        with:
+          base: main
+          # extra_args: --results=verified,unknown
