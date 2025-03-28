@@ -16,9 +16,6 @@ jobs:
           distribution: "adopt"
           cache: maven
 
-      - name: Run unit tests
-        run: ./mvnw test -DskipTests=false
-
       - name: Secret Scanning
         uses: trufflesecurity/trufflehog@main
         with:
@@ -34,3 +31,6 @@ jobs:
           scanners: "vuln,misconfig" # use these two scanner categories
           severity: "CRITICAL,HIGH,MEDIUM" # skip UNKNOWN and LOW
           skip-dirs: ".devcontainer" # ignore this directory
+
+      - name: Run unit tests
+        run: ./mvnw test -DskipTests=false
