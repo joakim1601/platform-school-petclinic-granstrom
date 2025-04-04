@@ -42,6 +42,16 @@ dependencies {
   implementation 'org.springframework.boot:spring-boot-starter-validation'
   implementation 'javax.cache:cache-api'
   implementation 'jakarta.xml.bind:jakarta.xml.bind-api'
+  implementation("net.logstash.logback:logstash-logback-encoder:7.4")
+   // Micrometer Prometheus Registry
+  implementation 'io.micrometer:micrometer-registry-prometheus:1.15.0-M2'
+
+    // OpenTelemetry Spring Boot Starter
+  implementation 'io.opentelemetry.instrumentation:opentelemetry-spring-boot-starter:2.14.0'
+
+    // OpenTelemetry OTLP Exporter
+  implementation 'io.opentelemetry:opentelemetry-exporter-otlp:1.48.0'
+
   runtimeOnly 'org.springframework.boot:spring-boot-starter-actuator'
   runtimeOnly "org.webjars:webjars-locator-lite:${webjarsLocatorLiteVersion}"
   runtimeOnly "org.webjars.npm:bootstrap:${webjarsBootstrapVersion}"
